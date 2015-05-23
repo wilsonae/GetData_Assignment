@@ -33,7 +33,7 @@ Some additional notes (if avaialble, otherwise you can leave this section out).
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
 
-##Description of the variables in the featre  file
+##Description of the variables in the feature file
 General description of the file including:
  - Dimensions of the dataset
  - Summary of the data
