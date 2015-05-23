@@ -39,20 +39,20 @@ Short, high-level description of what the cleaning script does. A complete descr
 
 ##Description of the variables in the feature file
 General description of the file including:
- - The tidy dataset consists of **10299** observations and four variables
+ - The tidy dataset consists of 2,310 observations and four variables
  - Each observation consists of four pieces of data as described below.
 
 ###Variable names
 |Column / variable  | Name  | Type | Valid values | Description |
 | :------------: |:---------------:| :-----:| :-----| :-----|
-| 1 | activity | Text | WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING | This is the activity. |
-| 2 | subject |   Integer | in the range 1:30 | ID number of the subject |
-| 3 | feature | Text | See the list below |One of the xx features being examined |
-| 4 | mean | Real | -1 <= x <= 1 | The mean of all observations for this activity, subject and feature |
+| 1 | activity | Factor w/ 6 levels | WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING | This is the activity. |
+| 2 | subject |   int | in the range 1:30 | ID number of the subject |
+| 3 | feature | Factor w/ 66 levels | See the list below |One of the xx features being examined |
+| 4 | mean | num | -1 <= x <= 1 | The mean of all observations for this activity, subject and feature |
 
 ###Variable 1 (activity)
 The activity variable indicates what 'exercise' that the subject was carrying out when the measurements were being taken.  
-- The class of the activity variable is 
+- The activity variable is a Factor w/ 6 levels
 - The activity variable can be any one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 - It does not have a unit of measurement
 
@@ -61,7 +61,7 @@ If available, some additional notes on the variable not covered elsewehere. If n
 
 ###Variable 2 (subject)
 The subject variable indicates which subject was carrying out the activity for this observation.
-- The class of the subject variable is 
+- The subject variable is an int
 - The subject variable can be any integer between 1 and 30
 - It does not have a unit of measurement
 
@@ -70,13 +70,29 @@ If available, some additional notes on the variable not covered elsewehere. If n
 
 ###Variable 3 (feature)
 The feature variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken.  
-- The class of the activity variable is 
+- The activity variable is a Factor w/ 66 levels
 - The activity variable can be any one of the 66 values in the table below
 - It does not have a unit of measurement
 
 ####Valid values for the feature variable
 
-tBodyAcc-XYZ, ... **use names() to get the list**
+ [1] tBodyAcc-mean()-X           tBodyAcc-mean()-Y           tBodyAcc-mean()-Z           tBodyAcc-std()-X           
+ [5] tBodyAcc-std()-Y            tBodyAcc-std()-Z            tGravityAcc-mean()-X        tGravityAcc-mean()-Y       
+ [9] tGravityAcc-mean()-Z        tGravityAcc-std()-X         tGravityAcc-std()-Y         tGravityAcc-std()-Z        
+[13] tBodyAccJerk-mean()-X       tBodyAccJerk-mean()-Y       tBodyAccJerk-mean()-Z       tBodyAccJerk-std()-X       
+[17] tBodyAccJerk-std()-Y        tBodyAccJerk-std()-Z        tBodyGyro-mean()-X          tBodyGyro-mean()-Y         
+[21] tBodyGyro-mean()-Z          tBodyGyro-std()-X           tBodyGyro-std()-Y           tBodyGyro-std()-Z          
+[25] tBodyGyroJerk-mean()-X      tBodyGyroJerk-mean()-Y      tBodyGyroJerk-mean()-Z      tBodyGyroJerk-std()-X      
+[29] tBodyGyroJerk-std()-Y       tBodyGyroJerk-std()-Z       tBodyAccMag-mean()          tBodyAccMag-std()          
+[33] tGravityAccMag-mean()       tGravityAccMag-std()        tBodyAccJerkMag-mean()      tBodyAccJerkMag-std()      
+[37] tBodyGyroMag-mean()         tBodyGyroMag-std()          tBodyGyroJerkMag-mean()     tBodyGyroJerkMag-std()     
+[41] fBodyAcc-mean()-X           fBodyAcc-mean()-Y           fBodyAcc-mean()-Z           fBodyAcc-std()-X           
+[45] fBodyAcc-std()-Y            fBodyAcc-std()-Z            fBodyAccJerk-mean()-X       fBodyAccJerk-mean()-Y      
+[49] fBodyAccJerk-mean()-Z       fBodyAccJerk-std()-X        fBodyAccJerk-std()-Y        fBodyAccJerk-std()-Z       
+[53] fBodyGyro-mean()-X          fBodyGyro-mean()-Y          fBodyGyro-mean()-Z          fBodyGyro-std()-X          
+[57] fBodyGyro-std()-Y           fBodyGyro-std()-Z           fBodyAccMag-mean()          fBodyAccMag-std()          
+[61] fBodyBodyAccJerkMag-mean()  fBodyBodyAccJerkMag-std()   fBodyBodyGyroMag-mean()     fBodyBodyGyroMag-std()     
+[65] fBodyBodyGyroJerkMag-mean() fBodyBodyGyroJerkMag-std() 
 
 ####Notes on variable 3:
 Complete details of the meaning of these variable names are given in the features-info.txt file that is in the "UCI HAR Dataset" folder in your working directory.  For example, *tBodyAcc-mean()-X* denotes a time domain signal 
@@ -84,7 +100,7 @@ Complete details of the meaning of these variable names are given in the feature
 
 ###Variable 4 (mean)
 The mean variable is the calculated mean of all the original observations for the current activity, subject and feature.
-- The class of the activity variable is 
+- The activity variable is a num
 - The mean variable can take any real number, x, in the range -1 <= x <= 1
 - the unit of measurement depends on the corresponding feature
   - if the feature contains the string "acc", the unit of measurement are metres per second per second

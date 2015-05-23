@@ -4,21 +4,21 @@ library("tidyr", lib.loc="~/R/win-library/3.2")
 # Step 0: Read in all of the data
 
 # Read in the training data set
-train_labels <- tbl_df(read.table("UCI HAR Dataset/train/y_train.txt",col.names="act_id"))   # train_labels first, naming the column "act_id"
-train_subject <- tbl_df(read.table("UCI HAR Dataset/train/subject_train.txt",col.names="subject"))   # train_subject next, naming the column "subject"
-train_data <- tbl_df(read.table("UCI HAR Dataset/train/x_train.txt"))   # finally, read in the train_data
+train_labels <- tbl_df(read.table("./UCI HAR Dataset/train/y_train.txt",col.names="act_id"))   # train_labels first, naming the column "act_id"
+train_subject <- tbl_df(read.table("./UCI HAR Dataset/train/subject_train.txt",col.names="subject"))   # train_subject next, naming the column "subject"
+train_data <- tbl_df(read.table("./UCI HAR Dataset/train/x_train.txt"))   # finally, read in the train_data
 
 # Repeat the process for the test data set
-test_labels <- tbl_df(read.table("UCI HAR Dataset/test/y_test.txt",col.names="act_id"))   # test_labels first, naming the column "act_id"
-test_subject <- tbl_df(read.table("UCI HAR Dataset/test/subject_test.txt",col.names="subject"))   # test_subject next, naming the column "subject"
-test_data <- tbl_df(read.table("UCI HAR Dataset/test/x_test.txt"))   # finally, read in the test_data
+test_labels <- tbl_df(read.table("./UCI HAR Dataset/test/y_test.txt",col.names="act_id"))   # test_labels first, naming the column "act_id"
+test_subject <- tbl_df(read.table("./UCI HAR Dataset/test/subject_test.txt",col.names="subject"))   # test_subject next, naming the column "subject"
+test_data <- tbl_df(read.table("./UCI HAR Dataset/test/x_test.txt"))   # finally, read in the test_data
 
 # Read in the features naming the second columns "f_id" and "feature".  Then drop the ID column
-features <- read.table("UCI HAR Dataset/features.txt",sep=" ",col.names=c("f_id","feature"))
+features <- read.table("./UCI HAR Dataset/features.txt",sep=" ",col.names=c("f_id","feature"))
 features <- features[,2]
 
 # Read in the activity labels, naming the columns "act_id" and "activity"
-activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt",sep=" ",col.names=c("act_id","activity"))
+activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt",sep=" ",col.names=c("act_id","activity"))
 
 
 # Step 1: merge the training and test data sets
@@ -61,4 +61,4 @@ feature_means <-
   arrange(activity, subject)                           # finally sort the resulting table by activity and then subject
 
 # Finally, write out the variable means
-write.table(feature_means,file="feature_means.txt",row.name=FALSE)
+write.table(feature_means,file="./UCI HAR Dataset/feature_means.txt",row.name=FALSE)
