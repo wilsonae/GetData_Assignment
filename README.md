@@ -14,7 +14,13 @@ library("dplyr", lib.loc="~/R/win-library/3.2")
 library("tidyr", lib.loc="~/R/win-library/3.2")
 ```
 
-The next step is to read in all of the data using the read.table command.  At the same time, the data is wrapped with a data frame table using the tbl_df command. 
+### Read in all of the data
+Read in the data using the read.table command.  At the same time, the data is wrapped with a data frame table using the tbl_df command. 
+
+The three files for the training data are in the subfolder *train* and are
+- *y_train.txt*: the activity IDs for each observation of the training data.  The data is given the variable name *act_id*
+- *subject_train.txt*: the subject ID for each observation of the training data.  The data is given the variable name *subject*
+- *x_train.txt*: the observed data values.  Each row consists of 561 variables as described in the *feature_info.txt* file.
 ```
 # Step 0: Read in all of the data
 
@@ -23,6 +29,7 @@ train_labels <- tbl_df(read.table("./UCI HAR Dataset/train/y_train.txt",col.name
 train_subject <- tbl_df(read.table("./UCI HAR Dataset/train/subject_train.txt",col.names="subject"))   # train_subject next, naming the column "subject"
 train_data <- tbl_df(read.table("./UCI HAR Dataset/train/x_train.txt"))   # finally, read in the train_data
 ```
+Repeat the above for the test data that is held in the subfolder *test*
 ```
 # Repeat the process for the test data set
 test_labels <- tbl_df(read.table("./UCI HAR Dataset/test/y_test.txt",col.names="act_id"))   # test_labels first, naming the column "act_id"
