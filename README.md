@@ -117,7 +117,7 @@ full_data <-cbind(combined_activity,combined_subject,selected_data)
 The data consists of 10,299 observations with 68 variables.  To convert this into the form that we requires we must
 - group the data by activity and subject using the *group_by* command
 - for each activity/subject combination, calculate the mean of each of the 66 observations using the *summarise_each* command
-- convert the 68 means per line into a list of 66 observation consisting of the activitym subject, feature and mean using the *gather* command
+- convert the 66 means per line into a list of 66 observation consisting of the activitym subject, feature and mean using the *gather* command
 - sort the list by activity and then subject.
 This will give a tidy dataset consisting of 2,310 observations with 4 variables.
 ```
@@ -132,7 +132,7 @@ feature_means <-
 ```
 
 ### Write out the data table
-Finally write out the table in the required format unsng the *write.table* command.
+Finally write out the table in the required format using the *write.table* command.
 
 ```
 
