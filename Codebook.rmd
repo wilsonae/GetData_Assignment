@@ -30,46 +30,65 @@ The experiments were carried out using a group of 30 volunteers within an age br
 ###Guide to create the tidy data file
 - download the raw data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 - unzip this file to your working directory.  This should create a subdirectory called "UCI HAR Dataset" in your working directory.
-- copy [run_analysis.R]() from this repo to your working directory 
+- copy [run_analysis.R](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) from this repo to your working directory 
 - execute run_analysis.R
 - on completion, a file, feature_means.txt, that contains the tidy data will be written to your working directory.  The file will have 10,299 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
 
 ###Cleaning of the data
-Short, high-level description of what the cleaning script does. A complete description of how the cleaning is carried out is in this [Readme](readme.md) file.
+Short, high-level description of what the cleaning script does. A complete description of how the cleaning is carried out is in this [Readme](https://github.com/wilsonae/GetData_Assignment/blob/master/README.md) file.
 
 ##Description of the variables in the feature file
 General description of the file including:
- - Dimensions of the dataset
- - Summary of the data
- - Variables present in the dataset
- - 
+ - The tidy dataset consists of **10299** observations and four variables
+ - Each observation consists of four pieces of data as described below.
 
-The tidy data files consists of **10299** rows and four columns.  Each is one observation containing four pieces of data as follows:
-
-|Column  | Name  | Type | Valid values | Description |
+###Variable names
+|Column / variable  | Name  | Type | Valid values | Description |
 | :------------: |:---------------:| :-----:| :-----| :-----|
 | 1 | activity | Text | WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING | This is the activity. |
 | 2 | subject |   Integer | in the range 1:30 | ID number of the subject |
 | 3 | feature | Text | See the list below |One of the xx features being examined |
 | 4 | mean | Real | -1 <= x <= 1 | The mean of all observations for this activity, subject and feature |
 
-Valid values for the featyre list are any one of the following: 
 
 
-tBodyAcc-XYZ, ... ** use names() to get the list **
+###Variable 1 (activity)
+The activity variable indicates what 'exercise' that the subject was carrying out when the measurements were being taken.  
+- The class of the activity variable is 
+- The activity variable can be any one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+- It does not have a unit of measurement
 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
+####Notes on variable 1:
+If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
 
-###Variable 1 (repeat this section for all variables in the dataset)
-Short description of what the variable describes.
+###Variable 2 (subject)
+The subject variable indicates which subject was carrying out the activity for this observation.
+- The class of the subject variable is 
+- The subject variable can be any integer between 1 and 30
+- It does not have a unit of measurement
 
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+####Notes on variable 2:
+If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
+###Variable 3 (feature)
+The feature variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken.  
+- The class of the activity variable is 
+- The activity variable can be any one of the 66 values in the table below
+- It does not have a unit of measurement
+
+####Valid values for the feature variable
+
+tBodyAcc-XYZ, ... **use names() to get the list**
+
+####Notes on variable 1:
+Details of the meaning of these variable names are given in the features-info.txt file that is in the "UCI HAR Dataset" folder in your working directory.  For example, *tBodyAcc-mean()-X* denotes a time domain signal 
+
+
+###Variable 1 (activity)
+The activity variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken.  
+- The class of the activity variable is 
+- The activity variable can be any one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+- It does not have a unit of measurement
 
 ####Notes on variable 1:
 If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
