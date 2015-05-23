@@ -8,14 +8,14 @@ output:
 The codebook for this course project should include the name of each variable (after any tidying) and a brief definition of its purpose at a minimum. The other sections you should have in a good codebook are an overview section about the source of the data as well as a synopsis, a data dictionary section explaining any naming conventions used for the variables and the aforementioned variable names and definitions. The codebook must provide enough information about the tidy dataset you are submitting so another person reading the codebook would understand the contents of the tidydata dataset file(s). 
 
 ## Project Description
-> This project was carried out for the programming assignment for the Getting and Cleaning Data course.  
+This project was carried as part of the programming assignment for the Getting and Cleaning Data course.  
 
 ##Study design and data processing
 
 ###Collection of the raw data
 From the readme.txt file that accompanied the data:
 
-The experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers were selected for generating the training data and 30% the test data. 
+The experiments were carried out using a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) whilst wearing a smartphone (Samsung Galaxy S II) on the waist. Using the Samsung's embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were captured. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers were selected for generating the training data and 30% the test data. 
 
 ###Notes on the original (raw) data 
 Some additional notes (if avaialble, otherwise you can leave this section out).
@@ -25,10 +25,10 @@ Some additional notes (if avaialble, otherwise you can leave this section out).
 
 ###Guide to create the tidy data file
 - download the raw data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-- unzipped this file to your working directory.  
-- copy [run_analysis.R]() from this repo to the newly created folder "UCI HAR Dataset\"
+- unzip this file to your working directory.  This should create a subdirectory called "UCI HAR Dataset" in your working directory.
+- copy [run_analysis.R]() from this repo to your working directory 
 - execute run_analysis.R
-- a file, feature_means.txt, will be written to the folder "UCI HAR Dataset\" that contains the tidy data.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
+- on completion, a file, feature_means.txt, that contains the tidy data will be written to your working directory.  The file will have 10,299 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
 
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
@@ -39,6 +39,8 @@ General description of the file including:
  - Summary of the data
  - Variables present in the dataset
  - 
+
+The tidy data files consists of **10299** rows and four columns.  Each is one observation containing four pieces of data as follows:
 
 |Column  | Name  | Type | Description |
 | :------------: |:---------------:| :-----:| :-----|
