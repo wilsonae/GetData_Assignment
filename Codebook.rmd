@@ -38,6 +38,15 @@ General description of the file including:
  - Dimensions of the dataset
  - Summary of the data
  - Variables present in the dataset
+ - 
+
+|Column  | Name  | Type | Description |
+| :------------: |:---------------:| :-----:| :-----|
+| 1 | activity | Text | This is the activity.  
+| 2 | subject |   Integer | ID number of the subject |
+| 3 | feature | Text | One of the xx features being examined |
+| 4 | mean | Real | The mean of all observations for this activity, subject and feature |
+
 
 (you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
 
