@@ -5,13 +5,13 @@ date: "22 May 2015"
 output:
   keep_md: yes
 ---
-Some parts of the text of this codebook come from both the assignment instructions and the readme files associated with the data.
-
-The codebook for this course project should include the name of each variable (after any tidying) and a brief definition of its purpose at a minimum. The other sections you should have in a good codebook are an overview section about the source of the data as well as a synopsis, a data dictionary section explaining any naming conventions used for the variables and the aforementioned variable names and definitions. The codebook must provide enough information about the tidy dataset you are submitting so another person reading the codebook would understand the contents of the tidydata dataset file(s). 
+>Some parts of the text of this codebook come from both the assignment instructions and the readme files associated with the data.
 
 ## Project Description
 This project was carried as part of the programming assignment for the Getting and Cleaning Data course.  The purpose of the project is to demonstrate my ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
 
+
+## Background
 One of the most exciting areas in all of data science right now is wearable computing - see for example [this article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/). Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
@@ -29,21 +29,21 @@ The experiments were carried out using a group of 30 volunteers within an age br
 
 ###Guide to create the tidy data file
 - download the raw data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-- unzip this file to your working directory.  This should create a subdirectory called "UCI HAR Dataset" in your working directory.
-- copy [run_analysis.R](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) from this repo to your working directory 
-- execute run_analysis.R
-- on completion, a file, feature_means.txt, that contains the tidy data will be written to your working directory.  The file will have 10,299 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
+- unzip the downloaded file to your working directory.  This will create a subdirectory called *"UCI HAR Dataset"* in your working directory.
+- copy [*run_analysis.R*](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) from this repo to your working directory.  Note: do not copy it to the "UCI HAR Dataset" subfolder.
+- execute *run_analysis.R*
+- on completion, a file, *feature_means.txt*, that contains the tidy data will be written to your working directory.  This file will have 2,310 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
+- if required, the tidy dataset can be read into R using the read.table command.
 
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does. A complete description of how the cleaning is carried out is in this [Readme](https://github.com/wilsonae/GetData_Assignment/blob/master/README.md) file.
 
 ##Description of the variables in the feature file
-General description of the file including:
- - The tidy dataset consists of 2,310 observations and four variables
+ - The tidy dataset, *feature_means.txt*, consists of 2,310 observations and four variables
  - Each observation consists of four pieces of data as described below.
 
 ###Variable names
-|Column / variable  | Name  | Type | Valid values | Description |
+|Column   | Name  | Type | Valid values | Description |
 | :------------: |:---------------:| :-----:| :-----| :-----|
 | 1 | activity | Factor w/ 6 levels | WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING | This is the activity. |
 | 2 | subject |   int | in the range 1:30 | ID number of the subject |
@@ -56,17 +56,11 @@ The activity variable indicates what 'exercise' that the subject was carrying ou
 - The activity variable can be any one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 - It does not have a unit of measurement
 
-####Notes on variable 1:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
-
 ###Variable 2 (subject)
 The subject variable indicates which subject was carrying out the activity for this observation.
 - The subject variable is an int
 - The subject variable can be any integer between 1 and 30
 - It does not have a unit of measurement
-
-####Notes on variable 2:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
 
 ###Variable 3 (feature)
 The feature variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken.  
@@ -75,7 +69,7 @@ The feature variable indicates that 'exercise' that the subject was carrying out
 - It does not have a unit of measurement
 
 ####Valid values for the feature variable
-
+```
  [1] tBodyAcc-mean()-X           tBodyAcc-mean()-Y           tBodyAcc-mean()-Z           tBodyAcc-std()-X           
  [5] tBodyAcc-std()-Y            tBodyAcc-std()-Z            tGravityAcc-mean()-X        tGravityAcc-mean()-Y       
  [9] tGravityAcc-mean()-Z        tGravityAcc-std()-X         tGravityAcc-std()-Y         tGravityAcc-std()-Z        
@@ -93,24 +87,19 @@ The feature variable indicates that 'exercise' that the subject was carrying out
 [57] fBodyGyro-std()-Y           fBodyGyro-std()-Z           fBodyAccMag-mean()          fBodyAccMag-std()          
 [61] fBodyBodyAccJerkMag-mean()  fBodyBodyAccJerkMag-std()   fBodyBodyGyroMag-mean()     fBodyBodyGyroMag-std()     
 [65] fBodyBodyGyroJerkMag-mean() fBodyBodyGyroJerkMag-std() 
+```
 
 ####Notes on variable 3:
 Complete details of the meaning of these variable names are given in the features-info.txt file that is in the "UCI HAR Dataset" folder in your working directory.  For example, *tBodyAcc-mean()-X* denotes a time domain signal 
-
 
 ###Variable 4 (mean)
 The mean variable is the calculated mean of all the original observations for the current activity, subject and feature.
 - The activity variable is a num
 - The mean variable can take any real number, x, in the range -1 <= x <= 1
 - the unit of measurement depends on the corresponding feature
-  - if the feature contains the string "acc", the unit of measurement are metres per second per second
-  - if the feature contains the string "gyro", the unit of measurement is radians per second.
-
-####Notes on variable 4:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
+  - if the feature contains the string "acc", the unit of measurement is *metres per second per second*
+  - if the feature contains the string "gyro", the unit of measurement is *radians per second*.
 
 ##Sources
-Sources you used if any, otherise leave out.
+In addition to the basic installation of R, this program uses that R packages *"dplyr"* and *"tidyr"*.
 
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
