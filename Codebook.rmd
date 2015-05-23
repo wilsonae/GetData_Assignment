@@ -5,21 +5,25 @@ date: "22 May 2015"
 output:
   keep_md: yes
 ---
+Some parts of this codebook come from both the assignment instructions and from the readme files associated with the data.
+
 The codebook for this course project should include the name of each variable (after any tidying) and a brief definition of its purpose at a minimum. The other sections you should have in a good codebook are an overview section about the source of the data as well as a synopsis, a data dictionary section explaining any naming conventions used for the variables and the aforementioned variable names and definitions. The codebook must provide enough information about the tidy dataset you are submitting so another person reading the codebook would understand the contents of the tidydata dataset file(s). 
 
 ## Project Description
-This project was carried as part of the programming assignment for the Getting and Cleaning Data course.  
+This project was carried as part of the programming assignment for the Getting and Cleaning Data course.  The purpose of the project is to demonstrate my ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
+
+One of the most exciting areas in all of data science right now is wearable computing - see for example [this article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/). Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
 
 ##Study design and data processing
 
 ###Collection of the raw data
-From the readme.txt file that accompanied the data:
-
 The experiments were carried out using a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) whilst wearing a smartphone (Samsung Galaxy S II) on the waist. Using the Samsung's embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were captured. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers were selected for generating the training data and 30% the test data. 
 
 ###Notes on the original (raw) data 
-Some additional notes (if avaialble, otherwise you can leave this section out).
-"The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details."
+"The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See the 'features_info.txt' for more details."
 
 ##Creating the tidy datafile
 
@@ -31,7 +35,7 @@ Some additional notes (if avaialble, otherwise you can leave this section out).
 - on completion, a file, feature_means.txt, that contains the tidy data will be written to your working directory.  The file will have 10,299 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
 
 ###Cleaning of the data
-Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
+Short, high-level description of what the cleaning script does. A complete description of how the cleaning is carried out is in this [Readme](readme.md) file.
 
 ##Description of the variables in the feature file
 General description of the file including:
@@ -42,13 +46,17 @@ General description of the file including:
 
 The tidy data files consists of **10299** rows and four columns.  Each is one observation containing four pieces of data as follows:
 
-|Column  | Name  | Type | Description |
-| :------------: |:---------------:| :-----:| :-----|
-| 1 | activity | Text | This is the activity.  
-| 2 | subject |   Integer | ID number of the subject |
-| 3 | feature | Text | One of the xx features being examined |
-| 4 | mean | Real | The mean of all observations for this activity, subject and feature |
+|Column  | Name  | Type | Valid values | Description |
+| :------------: |:---------------:| :-----:| :-----| :-----|
+| 1 | activity | Text | WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING | This is the activity. |
+| 2 | subject |   Integer | in the range 1:30 | ID number of the subject |
+| 3 | feature | Text | See the list below |One of the xx features being examined |
+| 4 | mean | Real | -1 <= x <= 1 | The mean of all observations for this activity, subject and feature |
 
+Valid values for the featyre list are any one of the following: 
+
+
+tBodyAcc-XYZ, ... ** use names() to get the list **
 
 (you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
 
