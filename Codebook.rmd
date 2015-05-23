@@ -5,7 +5,7 @@ date: "22 May 2015"
 output:
   keep_md: yes
 ---
-Some parts of this codebook come from both the assignment instructions and from the readme files associated with the data.
+Some parts of the text of this codebook come from both the assignment instructions and the readme files associated with the data.
 
 The codebook for this course project should include the name of each variable (after any tidying) and a brief definition of its purpose at a minimum. The other sections you should have in a good codebook are an overview section about the source of the data as well as a synopsis, a data dictionary section explaining any naming conventions used for the variables and the aforementioned variable names and definitions. The codebook must provide enough information about the tidy dataset you are submitting so another person reading the codebook would understand the contents of the tidydata dataset file(s). 
 
@@ -50,8 +50,6 @@ General description of the file including:
 | 3 | feature | Text | See the list below |One of the xx features being examined |
 | 4 | mean | Real | -1 <= x <= 1 | The mean of all observations for this activity, subject and feature |
 
-
-
 ###Variable 1 (activity)
 The activity variable indicates what 'exercise' that the subject was carrying out when the measurements were being taken.  
 - The class of the activity variable is 
@@ -80,17 +78,19 @@ The feature variable indicates that 'exercise' that the subject was carrying out
 
 tBodyAcc-XYZ, ... **use names() to get the list**
 
-####Notes on variable 1:
-Details of the meaning of these variable names are given in the features-info.txt file that is in the "UCI HAR Dataset" folder in your working directory.  For example, *tBodyAcc-mean()-X* denotes a time domain signal 
+####Notes on variable 3:
+Complete details of the meaning of these variable names are given in the features-info.txt file that is in the "UCI HAR Dataset" folder in your working directory.  For example, *tBodyAcc-mean()-X* denotes a time domain signal 
 
 
-###Variable 1 (activity)
-The activity variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken.  
+###Variable 4 (mean)
+The mean variable is the calculated mean of all the original observations for the current activity, subject and feature.
 - The class of the activity variable is 
-- The activity variable can be any one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-- It does not have a unit of measurement
+- The mean variable can take any real number, x, in the range -1 <= x <= 1
+- the unit of measurement depends on the corresponding feature
+  - if the feature contains the string "acc", the unit of measurement are metres per second per second
+  - if the feature contains the string "gyro", the unit of measurement is radians per second.
 
-####Notes on variable 1:
+####Notes on variable 4:
 If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
 
 ##Sources
