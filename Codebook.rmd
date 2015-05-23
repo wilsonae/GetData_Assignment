@@ -5,14 +5,16 @@ date: "22 May 2015"
 output:
   keep_md: yes
 ---
->Some parts of the text of this codebook come from both the assignment instructions and the readme files associated with the data.
+>Some parts of the text of this codebook come from both the assignment instructions and the readme files that accompanied the data.
 
 ## Project Description
-This project was carried as part of the programming assignment for the Getting and Cleaning Data course.  The purpose of the project is to demonstrate my ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
+This project was carried out as part of the programming assignment for the Getting and Cleaning Data course.  The purpose of the project is to demonstrate my ability to collect, work with, and clean a data set. The goal is to prepare a tidy dataset that can be used for later analysis. 
 
 
 ## Background
-One of the most exciting areas in all of data science right now is wearable computing - see for example [this article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/). Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
+(From the course assignment)
+
+>One of the most exciting areas in all of data science right now is wearable computing - see for example [this article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/). Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
@@ -97,8 +99,8 @@ The mean variable is the calculated mean of all the original observations for th
 - The activity variable is a num
 - The mean variable can take any real number, x, in the range -1 <= x <= 1
 - the unit of measurement depends on the corresponding feature
-  - if the feature contains the string "acc", the unit of measurement is *metres per second per second*
-  - if the feature contains the string "gyro", the unit of measurement is *radians per second*.
+  - if the feature contains the string "Acc", the unit of measurement is *metres per second per second*
+  - if the feature contains the string "Gyro", the unit of measurement is *radians per second*.
 
 ##Sources
 In addition to the basic installation of R, this program uses that R packages *"dplyr"* and *"tidyr"*.
