@@ -8,7 +8,7 @@ output:
 The codebook for this course project should include the name of each variable (after any tidying) and a brief definition of its purpose at a minimum. The other sections you should have in a good codebook are an overview section about the source of the data as well as a synopsis, a data dictionary section explaining any naming conventions used for the variables and the aforementioned variable names and definitions. The codebook must provide enough information about the tidy dataset you are submitting so another person reading the codebook would understand the contents of the tidydata dataset file(s). 
 
 ## Project Description
-This project was carried out for the programming assignment for the Getting and Cleaning Data course.  
+> This project was carried out for the programming assignment for the Getting and Cleaning Data course.  
 
 ##Study design and data processing
 
