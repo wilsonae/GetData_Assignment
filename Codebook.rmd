@@ -38,7 +38,9 @@ The experiments were carried out using a group of 30 volunteers within an age br
 - if required, the tidy dataset can be read into R using the read.table command.
 
 ###Cleaning of the data
-Short, high-level description of what the cleaning script does. A complete description of how the cleaning is carried out is in this [Readme](https://github.com/wilsonae/GetData_Assignment/blob/master/README.md) file.
+The raw data consisted of two sets of data.  The test data was held in three files and had 2,947 observations with 561 variables.  The training data was also in three files aand had 7,352 observations and 561 variables.  A the requirement was for only the mean and standard deviation observations from the original dat, the 561 variables were reduced to 66 variables. 
+
+A complete description of how the cleaning is carried out is in the [README.md](https://github.com/wilsonae/GetData_Assignment/blob/master/README.md) file.
 
 ##Description of the variables in the feature file
  - The tidy dataset, *feature_means.txt*, consists of 2,310 observations and four variables
@@ -92,7 +94,7 @@ The feature variable indicates that 'exercise' that the subject was carrying out
 ```
 
 ####Notes on variable 3:
-Complete details of the meaning of these variable names are given in the features-info.txt file that is in the "UCI HAR Dataset" folder in your working directory.  For example, *tBodyAcc-mean()-X* denotes a time domain signal 
+Complete details of the meaning of these variable names are given in the features-info.txt file that is in the "UCI HAR Dataset" folder in your working directory.
 
 ###Variable 4 (mean)
 The mean variable is the calculated mean of all the original observations for the current activity, subject and feature.
