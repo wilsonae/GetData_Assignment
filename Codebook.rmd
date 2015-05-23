@@ -1,32 +1,39 @@
 ---
-title: "Codebook template"
-author: "Your name here"
-date: "The date here"
+title: "Codebook for Getting Data Assignment"
+author: "Tony Wilson"
+date: "22 May 2015"
 output:
-  html_document:
-    keep_md: yes
+  keep_md: yes
 ---
+The codebook for this course project should include the name of each variable (after any tidying) and a brief definition of its purpose at a minimum. The other sections you should have in a good codebook are an overview section about the source of the data as well as a synopsis, a data dictionary section explaining any naming conventions used for the variables and the aforementioned variable names and definitions. The codebook must provide enough information about the tidy dataset you are submitting so another person reading the codebook would understand the contents of the tidydata dataset file(s). 
 
 ## Project Description
-Short description of the project
+This project was carried out for the programming assignment for the Getting and Cleaning Data course.  
 
 ##Study design and data processing
 
 ###Collection of the raw data
-Description of how the data was collected.
+From the readme.txt file that accompanied the data:
+
+The experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers were selected for generating the training data and 30% the test data. 
 
 ###Notes on the original (raw) data 
 Some additional notes (if avaialble, otherwise you can leave this section out).
+"The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details."
 
 ##Creating the tidy datafile
 
 ###Guide to create the tidy data file
-Description on how to create the tidy data file (1. download the data, ...)/
+- download the raw data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+- unzipped this file to your working directory.  
+- copy [run_analysis.R]() from this repo to the newly created folder "UCI HAR Dataset\"
+- execute run_analysis.R
+- a file, feature_means.txt, will be written to the folder "UCI HAR Dataset\" that contains the tidy data.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
 
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
 
-##Description of the variables in the tiny_data.txt file
+##Description of the variables in the featre  file
 General description of the file including:
  - Dimensions of the dataset
  - Summary of the data
