@@ -31,10 +31,10 @@ The experiments were carried out using a group of 30 volunteers within an age br
 
 ###Guide to create the tidy data file
 - download the raw data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-- unzip the downloaded file to your working directory.  This will create a subdirectory called *"UCI HAR Dataset"* in your working directory.
-- copy [*run_analysis.R*](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) from this repo to your working directory.  Note: do not copy it to the "UCI HAR Dataset" subfolder.
+- unzip the downloaded file to your working directory.  This will create a subfolder called *"UCI HAR Dataset"* in your working directory.
+- copy [*run_analysis.R*](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) from this repo to your working directory.  Note: do not copy it to the *"UCI HAR Dataset"* subfolder.
 - execute *run_analysis.R*
-- on completion, a file, *feature_means.txt*, that contains the tidy data will be written to your working directory.  This file will have 2,310 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
+- on completion, a file, *feature_means.txt*, that contains the tidy dataset will be written to your working directory.  This file will have 2,310 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
 - if required, the tidy dataset can be read into R using the read.table command.
 
 ###Cleaning of the data
@@ -49,7 +49,7 @@ Short, high-level description of what the cleaning script does. A complete descr
 | :------------: |:---------------:| :-----:| :-----| :-----|
 | 1 | activity | Factor w/ 6 levels | WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING | This is the activity. |
 | 2 | subject |   int | in the range 1:30 | ID number of the subject |
-| 3 | feature | Factor w/ 66 levels | See the list below |One of the xx features being examined |
+| 3 | feature | Factor w/ 66 levels | See the list below |One of the 66 features being examined |
 | 4 | mean | num | -1 <= x <= 1 | The mean of all observations for this activity, subject and feature |
 
 ###Variable 1 (activity)
@@ -66,8 +66,8 @@ The subject variable indicates which subject was carrying out the activity for t
 
 ###Variable 3 (feature)
 The feature variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken.  
-- The activity variable is a Factor w/ 66 levels
-- The activity variable can be any one of the 66 values in the table below
+- The feature variable is a Factor w/ 66 levels
+- The feature variable can be any one of the 66 values in the table below
 - It does not have a unit of measurement
 
 ####Valid values for the feature variable
@@ -96,12 +96,12 @@ Complete details of the meaning of these variable names are given in the feature
 
 ###Variable 4 (mean)
 The mean variable is the calculated mean of all the original observations for the current activity, subject and feature.
-- The activity variable is a num
+- The mean variable is a num
 - The mean variable can take any real number, x, in the range -1 <= x <= 1
 - the unit of measurement depends on the corresponding feature
   - if the feature contains the string "Acc", the unit of measurement is *metres per second per second*
   - if the feature contains the string "Gyro", the unit of measurement is *radians per second*.
 
 ##Sources
-In addition to the basic installation of R, this program uses that R packages *"dplyr"* and *"tidyr"*.
+In addition to the basic installation of R, this program uses the R packages *"dplyr"* and *"tidyr"*.
 
