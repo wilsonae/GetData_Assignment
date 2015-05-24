@@ -3,7 +3,7 @@
 
 This README will describe the process used to tidy the data referred to in the associated [Codebook](https://github.com/wilsonae/GetData_Assignment/blob/master/Codebook.rmd) for the Getting and Cleaning Data project assignment.
 
-The associated program [run_analysis.R](GetData_Assignment/run_analysis.R) requires the additional R packages *dplyr* and *tidyr*.  It will load these two libraries at execution.
+The associated program [run_analysis.R](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) requires the additional R packages *dplyr* and *tidyr*.  It will load these two libraries at execution.
 
 ## Process used by the program to clean the data and create a tidy dataset (with code snippets)
 
