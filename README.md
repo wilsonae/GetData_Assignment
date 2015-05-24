@@ -5,9 +5,15 @@ This README will describe the process used to tidy the data referred to in the a
 
 The associated program [run_analysis.R](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) requires the additional R packages *dplyr* and *tidyr*.  It will load these two libraries at execution.
 
-It is possible for the program to download the zipfile using the URL provided in the assignment instructions.  However, I have not done this as it is a waste of bandwidth to download a file that is nearly 60Mb every time that this program is run.
+It is possible for the program to download the zipfile using the URL provided in the assignment instructions.  However, I have not done this as the zipfile is nearly 60Mb which would be a waste of bandwidth if downloaded every time that this program is run.
 
-## Process used by the program to clean the data and create a tidy dataset (with code snippets)
+## Preliminary steps
+Before running this program, 
+- download the program [run_analysis.R](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) from this repo and save it to your working directory.
+- download the zipped dataset from the URL https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip and save it to your working directory.
+- check that the two required R packages  *dplyr* and *tidyr* have been installed.
+
+## Process used to clean the data and create a tidy dataset (with code snippets)
 
 ### Load the required additional libraries
 ```
