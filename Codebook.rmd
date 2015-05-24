@@ -99,7 +99,7 @@ The feature variable
 ```
 
 ####Notes on variable 3:
-Complete details of the meaning of these variable names are given in the [features_info.txt](GetData_Assignment/features_info.txt) file that is in this repo and the "UCI HAR Dataset" folder in your working directory.
+Complete details of the meaning of these variable names are given in the [features_info.txt](GetData_Assignment/features_info.txt) file that is both in this repo and in the "UCI HAR Dataset" folder under your working directory.
 
 ###Variable 4 (mean)
 The **mean** variable is the calculated mean of all the original observations for the current activity, subject and feature.
