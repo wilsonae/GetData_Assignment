@@ -114,4 +114,4 @@ Finally output the table in the required format using the *write.table* command.
 # Finally, write out the variable means
 write.table(feature_means,file="./UCI HAR Dataset/feature_means.txt",row.name=FALSE)
 ```
-This file should be read into R using the *data.table* command.
+This file should be read into R using the *read.table* command.
