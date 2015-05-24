@@ -32,13 +32,13 @@ It is assumed that
 - the R packages *"dplyr"* and *"tidyr"* have already been installed into R.
 
 ###Creating the tidy data file
-- execute the program by typing **source("run_analysis.R")** in the RStudio window.
+- execute the program by typing **source("run_analysis.R")** in the RStudio console window.
 - on completion, the *"UCI HAR Dataset"* subfolder under your working directory will contain a file, *feature_means.txt*, that contains the tidy dataset.  This file will have 2,310 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
 
 The tidy dataset should be read into R using the *read.table* command.
 
 ###Cleaning of the data
-The raw data consisted of two sets of data.  The test data was held in three files and had 2,947 observations with 561 variables.  The training data was also in three files aand had 7,352 observations and 561 variables.  As the requirement was to use only the mean and standard deviation observations from the original data, the 561 variables were reduced to 66 variables. 
+The raw data consisted of two sets of data.  The test data was held in three files and had 2,947 observations with 561 variables.  The training data was also in three files and had 7,352 observations and 561 variables.  As the requirement was to use only the mean and standard deviation observations from the original data, the 561 variables were reduced to 66 variables. 
 
 A complete description of how the cleaning and processing is carried out is in the [README.md](https://github.com/wilsonae/GetData_Assignment/blob/master/README.md) file.
 
