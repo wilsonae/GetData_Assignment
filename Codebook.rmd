@@ -27,7 +27,7 @@ The experiments were carried out using a group of 30 volunteers within an age br
 
 ###Assumptions
 It is assumed that
-- the raw data data has been downloaded from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+- the raw data has been downloaded from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 - the raw data has been unzipped to your working directory.  This will create a subfolder called *"UCI HAR Dataset"* in your working directory.
 - [*run_analysis.R*](GetData_Assignment/run_analysis.R) has been copied from this repo to your working directory.  (Note: **do not** copy it to the *"UCI HAR Dataset"* subfolder underneath your working directory.)
 - the R packages *"dplyr"* and *"tidyr"* have already been installed.
