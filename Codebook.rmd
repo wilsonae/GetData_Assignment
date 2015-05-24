@@ -2,13 +2,11 @@
 title: "Codebook for Getting Data Assignment"
 author: "Tony Wilson"
 date: "22 May 2015"
-output:
-  keep_md: yes
 ---
->Some parts of the text of this codebook come from both the assignment instructions and the readme files that accompanied the data.
+>Some parts of the text of this codebook are taken from both the assignment instructions and the readme files that accompanied the data.
 
 ## Project Description
-This project was carried out as part of the programming assignment for the Getting and Cleaning Data course.  The purpose of the project is to demonstrate my ability to collect, work with, and clean a data set. The goal is to prepare a tidy dataset that can be used for later analysis. 
+This project was carried out as part of the programming assignment for the Getting and Cleaning Data course.  The purpose of the project is to demonstrate the ability to collect, work with, and clean a data set. The goal is to prepare a tidy dataset that can be used for later analysis. 
 
 
 ## Background
@@ -32,45 +30,51 @@ The experiments were carried out using a group of 30 volunteers within an age br
 ###Guide to create the tidy data file
 - download the raw data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 - unzip the downloaded file to your working directory.  This will create a subfolder called *"UCI HAR Dataset"* in your working directory.
-- copy [*run_analysis.R*](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) from this repo to your working directory.  Note: do not copy it to the *"UCI HAR Dataset"* subfolder.
+- copy [*run_analysis.R*](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) from this repo to your working directory.  Note: **do not** copy it to the *"UCI HAR Dataset"* subfolder underneath your working directory.
 - execute *run_analysis.R*
 - on completion, a file, *feature_means.txt*, that contains the tidy dataset will be written to the *"UCI HAR Dataset"* subfolder under your working directory.  This file will have 2,310 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
-- if required, the tidy dataset can be read into R using the read.table command.
+
+The tidy dataset should be read into R using the read.table command.
 
 ###Cleaning of the data
-The raw data consisted of two sets of data.  The test data was held in three files and had 2,947 observations with 561 variables.  The training data was also in three files aand had 7,352 observations and 561 variables.  As the requirement was for only the mean and standard deviation observations from the original data, the 561 variables were reduced to 66 variables. 
+The raw data consisted of two sets of data.  The test data was held in three files and had 2,947 observations with 561 variables.  The training data was also in three files aand had 7,352 observations and 561 variables.  As the requirement was to use only the mean and standard deviation observations from the original data, the 561 variables were reduced to 66 variables. 
 
-A complete description of how the cleaning is carried out is in the [README.md](https://github.com/wilsonae/GetData_Assignment/blob/master/README.md) file.
+A complete description of how the cleaning and processing is carried out is in the [README.md](https://github.com/wilsonae/GetData_Assignment/blob/master/README.md) file.
 
 ##Description of the variables in the feature file
- - The tidy dataset, *feature_means.txt*, consists of 2,310 observations and four variables
- - Each observation consists of four pieces of data as described below.
+The tidy dataset, *feature_means.txt*, consists of 2,310 observations and four variables
 
-###Variable names
-|Column   | Name  | Type | Valid values | Description |
+Each observation consists of four pieces of data as described below.
+
+| Variable | Name  | Type | Valid values | Description |
 | :------------: |:---------------:| :-----:| :-----| :-----|
-| 1 | activity | Factor w/ 6 levels | WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING | This is the activity. |
+| 1 | activity | Factor w/ 6 levels | WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING | This is the activity that was being performed. |
 | 2 | subject |   int | in the range 1:30 | ID number of the subject |
 | 3 | feature | Factor w/ 66 levels | See the list below |One of the 66 features being examined |
 | 4 | mean | num | -1 <= x <= 1 | The mean of all observations for this activity, subject and feature |
 
 ###Variable 1 (activity)
-The activity variable indicates what 'exercise' that the subject was carrying out when the measurements were being taken.  
-- The activity variable is a Factor w/ 6 levels
-- The activity variable can be any one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-- It does not have a unit of measurement
+The activity variable indicates what 'exercise' was being carryied out by the subject when the measurements were being taken.  
+The activity variable 
+- is a Factor w/ 6 levels
+- can be any one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+- does not have a unit of measurement
 
 ###Variable 2 (subject)
 The subject variable indicates which subject was carrying out the activity for this observation.
-- The subject variable is an int
-- The subject variable can be any integer between 1 and 30
-- It does not have a unit of measurement
+
+The subject variable 
+- is an int
+- can be any integer between 1 and 30
+- does not have a unit of measurement
 
 ###Variable 3 (feature)
-The feature variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken.  
-- The feature variable is a Factor w/ 66 levels
-- The feature variable can be any one of the 66 values in the table below
-- It does not have a unit of measurement
+The feature variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken. 
+
+The feature variable 
+- is a Factor w/ 66 levels
+- can be any one of the 66 values in the table below
+- does not have a unit of measurement
 
 ####Valid values for the feature variable
 ```
@@ -98,9 +102,11 @@ Complete details of the meaning of these variable names are given in the feature
 
 ###Variable 4 (mean)
 The mean variable is the calculated mean of all the original observations for the current activity, subject and feature.
-- The mean variable is a num
-- The mean variable can take any real number, x, in the range -1 <= x <= 1
-- the unit of measurement depends on the corresponding feature
+
+The mean variable 
+- is a num
+- can take any real number, x, in the range -1 <= x <= 1
+- has a unit of measurement dependdent upon the corresponding feature
   - if the feature contains the string "Acc", the unit of measurement is *metres per second per second*
   - if the feature contains the string "Gyro", the unit of measurement is *radians per second*.
 
