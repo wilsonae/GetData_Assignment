@@ -59,7 +59,7 @@ The **activity** variable indicates what 'exercise' was being carried out by the
 
 The activity variable 
 - is a Factor with 6 levels
-- can be any one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+- can be any one of *WALKING*, *WALKING_UPSTAIRS*, *WALKING_DOWNSTAIRS*, *SITTING*, *STANDING*, *LAYING*
 - does not have a unit of measurement
 
 ###Variable 2 (subject)
