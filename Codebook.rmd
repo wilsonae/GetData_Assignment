@@ -54,7 +54,7 @@ Each observation consists of four pieces of data as described below.
 | 4 | mean | num | -1 <= x <= 1 | The mean of all observations for this activity, subject and feature |
 
 ###Variable 1 (activity)
-The activity variable indicates what 'exercise' was being carryied out by the subject when the measurements were being taken.
+The **activity** variable indicates what 'exercise' was being carryied out by the subject when the measurements were being taken.
 
 The activity variable 
 - is a Factor w/ 6 levels
@@ -62,7 +62,7 @@ The activity variable
 - does not have a unit of measurement
 
 ###Variable 2 (subject)
-The subject variable indicates which subject was carrying out the activity for this observation.
+The **subject** variable indicates which subject was carrying out the activity for this observation.
 
 The subject variable 
 - is an int
@@ -70,7 +70,7 @@ The subject variable
 - does not have a unit of measurement
 
 ###Variable 3 (feature)
-The feature variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken. 
+The **feature** variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken. 
 
 The feature variable 
 - is a Factor w/ 66 levels
@@ -102,7 +102,7 @@ The feature variable
 Complete details of the meaning of these variable names are given in the features-info.txt file that is in the "UCI HAR Dataset" folder in your working directory.
 
 ###Variable 4 (mean)
-The mean variable is the calculated mean of all the original observations for the current activity, subject and feature.
+The **mean** variable is the calculated mean of all the original observations for the current activity, subject and feature.
 
 The mean variable 
 - is a num
