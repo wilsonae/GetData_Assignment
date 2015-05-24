@@ -27,12 +27,11 @@ The experiments were carried out using a group of 30 volunteers within an age br
 
 ###Assumptions
 It is assumed that
-- to avoid wasting bandwidth, the raw data has been downloaded from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip .
+- to avoid wasting bandwidth, the raw data has already been downloaded from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip .
 - [*run_analysis.R*](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) has been copied from this repo to your working directory.
-- the R packages *"dplyr"* and *"tidyr"* have already been installed.
+- the R packages *"dplyr"* and *"tidyr"* have already been installed into R.
 
 ###Creating the tidy data file
-
 - execute the program *run_analysis.R* by typing *source("run-analysis.R")*
 - on completion, a file, *feature_means.txt*, that contains the tidy dataset will be written to the *"UCI HAR Dataset"* subfolder under your working directory.  This file will have 2,310 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
 
