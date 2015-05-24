@@ -55,7 +55,7 @@ Each observation consists of four pieces of data as described below.
 | 4 | mean | num | -1 <= x <= 1 | The mean of all observations for this activity, subject and feature |
 
 ###Variable 1 (activity)
-The **activity** variable indicates what 'exercise' was being carried out by the subject when the measurements were being taken.
+The **activity** variable indicates what 'exercise' was being carried out by the subject when the measurements associated with this feature were being recorded.
 
 The activity variable 
 - is a Factor with 6 levels
