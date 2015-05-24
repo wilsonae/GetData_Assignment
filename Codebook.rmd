@@ -23,14 +23,14 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 The experiments were carried out using a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) whilst wearing a smartphone (Samsung Galaxy S II) on the waist. Using the Samsung's embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were captured. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers were selected for generating the training data and 30% the test data. 
 
 ###Notes on the original (raw) data 
-"The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See the ['features_info.txt'](GetData_Assignment/features_info.txt) for more details."
+>"The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See the ['features_info.txt'](GetData_Assignment/features_info.txt) for more details."
 
 ##Creating the tidy datafile
 
 ###Guide to create the tidy data file
 - download the raw data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 - unzip the downloaded file to your working directory.  This will create a subfolder called *"UCI HAR Dataset"* in your working directory.
-- copy [*run_analysis.R*](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) from this repo to your working directory.  Note: **do not** copy it to the *"UCI HAR Dataset"* subfolder underneath your working directory.
+- copy [*run_analysis.R*](GetData_Assignment/run_analysis.R) from this repo to your working directory.  Note: **do not** copy it to the *"UCI HAR Dataset"* subfolder underneath your working directory.
 - execute *run_analysis.R*
 - on completion, a file, *feature_means.txt*, that contains the tidy dataset will be written to the *"UCI HAR Dataset"* subfolder under your working directory.  This file will have 2,310 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
 
@@ -39,7 +39,7 @@ The tidy dataset should be read into R using the read.table command.
 ###Cleaning of the data
 The raw data consisted of two sets of data.  The test data was held in three files and had 2,947 observations with 561 variables.  The training data was also in three files aand had 7,352 observations and 561 variables.  As the requirement was to use only the mean and standard deviation observations from the original data, the 561 variables were reduced to 66 variables. 
 
-A complete description of how the cleaning and processing is carried out is in the [README.md](https://github.com/wilsonae/GetData_Assignment/blob/master/README.md) file.
+A complete description of how the cleaning and processing is carried out is in the [README.md](GetData_Assignment/README.md) file.
 
 ##Description of the variables in the feature file
 The tidy dataset, *feature_means.txt*, consists of 2,310 observations and four variables
@@ -47,7 +47,7 @@ The tidy dataset, *feature_means.txt*, consists of 2,310 observations and four v
 Each observation consists of four pieces of data as described below.
 
 | Variable | Name  | Type | Valid values | Description |
-| :------------: |:---------------:| :-----:| :-----| :-----|
+| :------: |:-----:|:----:| :------------| :-----------|
 | 1 | activity | Factor w/ 6 levels | WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING | This is the activity that was being performed. |
 | 2 | subject |   int | in the range 1:30 | ID number of the subject |
 | 3 | feature | Factor w/ 66 levels | See the list below |One of the 66 features being examined |
