@@ -3,6 +3,9 @@ library("tidyr", lib.loc="~/R/win-library/3.2")
 
 # Step 0: Read in all of the data
 
+# Unzip the data
+unzip("UCI HAR Dataset.zip")
+
 # Read in the training data set
 train_labels <- tbl_df(read.table("./UCI HAR Dataset/train/y_train.txt",col.names="act_id"))   # train_labels first, naming the column "act_id"
 train_subject <- tbl_df(read.table("./UCI HAR Dataset/train/subject_train.txt",col.names="subject"))   # train_subject next, naming the column "subject"
