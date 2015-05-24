@@ -23,7 +23,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 The experiments were carried out using a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) whilst wearing a smartphone (Samsung Galaxy S II) on the waist. Using the Samsung's embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were captured. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers were selected for generating the training data and 30% the test data. 
 
 ###Notes on the original (raw) data 
-"The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See the 'features_info.txt' for more details."
+"The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See the ['features_info.txt'](GetData_Assignment/features_info.txt) for more details."
 
 ##Creating the tidy datafile
 
@@ -54,15 +54,15 @@ Each observation consists of four pieces of data as described below.
 | 4 | mean | num | -1 <= x <= 1 | The mean of all observations for this activity, subject and feature |
 
 ###Variable 1 (activity)
-The **activity** variable indicates what 'exercise' was being carryied out by the subject when the measurements were being taken.
+The **activity** variable indicates what 'exercise' was being carried out by the subject when the measurements were being taken.
 
 The activity variable 
-- is a Factor w/ 6 levels
+- is a Factor with 6 levels
 - can be any one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 - does not have a unit of measurement
 
 ###Variable 2 (subject)
-The **subject** variable indicates which subject was carrying out the activity for this observation.
+The **subject** variable indicates the ID of the subject that was carrying out the activity for this observation.
 
 The subject variable 
 - is an int
@@ -70,10 +70,10 @@ The subject variable
 - does not have a unit of measurement
 
 ###Variable 3 (feature)
-The **feature** variable indicates that 'exercise' that the subject was carrying out when the measurements were being taken. 
+The **feature** variable indicates what measurement was averaged for this actiity and subject. 
 
 The feature variable 
-- is a Factor w/ 66 levels
+- is a Factor with 66 levels
 - can be any one of the 66 values in the table below
 - does not have a unit of measurement
 
@@ -99,7 +99,7 @@ The feature variable
 ```
 
 ####Notes on variable 3:
-Complete details of the meaning of these variable names are given in the features-info.txt file that is in the "UCI HAR Dataset" folder in your working directory.
+Complete details of the meaning of these variable names are given in the [features_info.txt](GetData_Assignment/features_info.txt) file that is in this repo and the "UCI HAR Dataset" folder in your working directory.
 
 ###Variable 4 (mean)
 The **mean** variable is the calculated mean of all the original observations for the current activity, subject and feature.
@@ -111,6 +111,6 @@ The mean variable
   - if the feature contains the string "Acc", the unit of measurement is *metres per second per second*
   - if the feature contains the string "Gyro", the unit of measurement is *radians per second*.
 
-##Sources
+##R Packages Used
 In addition to the basic installation of R, this program uses the R packages *"dplyr"* and *"tidyr"*.
 
