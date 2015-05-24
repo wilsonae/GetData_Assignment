@@ -1,4 +1,4 @@
-# GetData_Assignment Readme File
+# Getting and Cleaning Data Project Readme File
 
 
 This README will describe the process used to tidy the data referred to in the associated [Codebook](https://github.com/wilsonae/GetData_Assignment/blob/master/Codebook.rmd) for the Getting and Cleaning Data project assignment.
