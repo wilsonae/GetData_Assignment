@@ -5,6 +5,8 @@ This README will describe the process used to tidy the data referred to in the a
 
 The associated program [run_analysis.R](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) requires the additional R packages *dplyr* and *tidyr*.  It will load these two libraries at execution.
 
+It is possible for the program to download the zipfile using the URL provided in the assignment instructions.  However, I have not done this as it is a waste of bandwidth to download a file that is nearly 60Mb every time that this program is run.
+
 ## Process used by the program to clean the data and create a tidy dataset (with code snippets)
 
 ### Load the required additional libraries
@@ -14,6 +16,13 @@ library("tidyr", lib.loc="~/R/win-library/3.2")
 ```
 
 ### Step 0: Read in the data
+
+Unzip the data from the downloaded zipfile using the *unzip* command..  
+```
+# Unzip the data
+unzip("UCI HAR Dataset.zip")
+```
+
 Read in the data using the *read.table* command.  At the same time, wrap the data with a data frame table using the *tbl_df* command. 
 
 The three files for the training data are in the subfolder *train* and are
