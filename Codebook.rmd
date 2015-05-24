@@ -32,8 +32,8 @@ It is assumed that
 - the R packages *"dplyr"* and *"tidyr"* have already been installed into R.
 
 ###Creating the tidy data file
-- execute the program *run_analysis.R* by typing *source("run-analysis.R")*
-- on completion, a file, *feature_means.txt*, that contains the tidy dataset will be written to the *"UCI HAR Dataset"* subfolder under your working directory.  This file will have 2,310 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
+- execute the program by typing **source("run_analysis.R")** in the RStudio window.
+- on completion, the *"UCI HAR Dataset"* subfolder under your working directory will contain a file, *feature_means.txt*, that contains the tidy dataset.  This file will have 2,310 rows and four columns.  Each observation in this file will have four variables (activity, subject, feature, mean) which are described below.
 
 The tidy dataset should be read into R using the *read.table* command.
 
