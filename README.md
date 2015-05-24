@@ -3,9 +3,9 @@
 
 This README will describe the process used to tidy the data referred to in the associated [Codebook](GetData_Assignment/Codebook.rmd) for the Getting and Cleaning Data project assignment.
 
-The associated program run_analysis.R requires the additional R packages *dplyr* and *tidyr*.  It will load these two libraries at execution.
+The associated program [run_analysis.R](GetData_Assignment/run_analysis.R) requires the additional R packages *dplyr* and *tidyr*.  It will load these two libraries at execution.
 
-## Process used by the program (with code snippets)
+## Process used by the program to clean the data and create a tidy dataset (with code snippets)
 
 ### Load the required additional libraries
 ```
@@ -27,7 +27,7 @@ train_subject <- tbl_df(read.table("./UCI HAR Dataset/train/subject_train.txt",c
 train_data <- tbl_df(read.table("./UCI HAR Dataset/train/x_train.txt"))   # finally, read in the train_data
 ```
 
-Repeat the above by reading in the three files of the test data that is held in the subfolder *test*.
+Repeat the above for the test data that is held in the subfolder *test* by reading in the three test files.
 ```
 # Repeat the process for the test data set
 test_labels <- tbl_df(read.table("./UCI HAR Dataset/test/y_test.txt",col.names="act_id"))   # test_labels first, naming the column "act_id"
@@ -35,7 +35,7 @@ test_subject <- tbl_df(read.table("./UCI HAR Dataset/test/subject_test.txt",col.
 test_data <- tbl_df(read.table("./UCI HAR Dataset/test/x_test.txt"))   # finally, read in the test_data
 ```
 
-Input the feature file as a factored list of text data.  The raw feature list has two variables, a feature ID and a feature name.  As we only require the feature name, we can subset the data to drop the ID.  The remaining variable is given the variable name *feature*.
+Input the feature file as a factored list of text data.  The raw feature list has two variables, a feature ID and a feature name.  As we only require the feature name, we can subset the data to drop the ID.  The remaining variable is given the name *feature*.
 ```
 # Read in the features naming the second columns "f_id" and "feature".  Then drop the ID column
 features <- read.table("./UCI HAR Dataset/features.txt",sep=" ",col.names=c("f_id","feature"))
@@ -49,7 +49,7 @@ activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt",sep=" ",co
 ```
 
 ### Step 1: Merge the training and test datasets
-Create three new data frames that contain the combined data using *rbind* to add the observations from the test data to the bottom off the training data.  The three combined tables are: for the activity labels (*combined_labels*); the subject IDs (*combined_subject*); and the observed data (*combined_data*).
+Using *rbind*, create three new data frames that contain the combined data by adding the the test data to the bottom off the training data.  The three combined tables are: for the activity labels (*combined_labels*); the subject IDs (*combined_subject*); and the observed data (*combined_data*).
 ```
 # merge the different data set tables into combined tables
 combined_labels <- rbind(train_labels,test_labels)     # activity IDs
@@ -60,7 +60,7 @@ combined_data <- rbind(train_data,test_data)           # data
 ### Step 2: Extract the columns containing the means and standard deviations
 The feature variables containing the means and standard deviations that we require will contain the strings **"mean()"** or **"std()"** respectively.  The *grep* command will give us the column numbers containing the required text.
 
-Here *grep* is run twice on the features, once for each string; the two results are then combined using *rbind*, and finally, the list is sorted with the result stored in *columns_required* using the *sort* command.
+Here *grep* is run twice on the features, once for each string.  The two results are then combined using *rbind*, and finally, the list is sorted using the *sort* command with the result stored in *columns_required* .
 ```
 # get the column numbers that contain a mean or a standard deviation
 columns_required <-
@@ -68,7 +68,7 @@ columns_required <-
         grep("std[(][)]",features)) %>%   # grep for "std" in the feature name
   sort                                    # and sort them into ascending order
 ```
-This produces a list of 66 number (33 for the means and 33 for the SDs) which can be used to select the required variables from both the observed data (*combined_data*) and their feature names (*combined_features*).
+This produces a list of 66 numbers (33 for the means and 33 for the SDs) which can be used to subset both the observed data (*combined_data*) and the feature names (*combined_features*).
 ```
 # use this list to extract the required columns from the data and the feature labels
 selected_data <- combined_data[,columns_required]   # data
@@ -76,7 +76,7 @@ selected_features <- features[columns_required]     # features
 ```
 
 ### Step 3: Replace the activity IDs with their names
-Using the *act_id* variable from each table as the key add the activity names (*activity_labels*) to the activity labels (*combined_labels*) using the *merge* command.  As we no longer require the activity name, use the *select* command to ignore the IDs.
+Using the *act_id* variable from each table as the key to add the activity names (*activity_labels*) to the observation activity labels (*combined_labels*) using the *merge* command.  As we no longer require the activity ID, use the *select* command to subset the data and remove the IDs.
 ```
 combined_activity <- 
   merge(activity_labels,combined_labels, by="act_id") %>%  # merge the IDs with the names
@@ -84,7 +84,7 @@ combined_activity <-
 ```
 
 ### Step 4: Appropriately label the data set
-Label the variables of the selected observed data with selected feature names using the *colnames* command.  Then combine the activity names (*combined_activity*), subject ID (*combined_subject*) and selected data (*selected_data*) into a single data frame using the *cbind* command.  The order of the variables in this data table is firstly **activity**, then **subject**, followed by the **feature variables**.
+Label the variables of the selected observed data with selected feature names using the *colnames* command.  Then combine the activity names (*combined_activity*), subject ID (*combined_subject*) and selected data (*selected_data*) into a single data frame using the *cbind* command.  The order of the variables in this data table is **activity**, **subject**, then **feature variables**.
 ```
 # Use the selected feature labels as the data variable names
 colnames(selected_data) <- selected_features
@@ -92,13 +92,13 @@ colnames(selected_data) <- selected_features
 full_data <-cbind(combined_activity,combined_subject,selected_data)
 ```
 
-### Step 5: For each variable for each activity and subject, create a tidy data set of the average 
+### Step 5: For each activity, subject and feature, create a tidy data set containing the average 
 The data consists of 10,299 observations with 68 variables.  To convert this into the form that we require we must
-- group the data by activity and subject using the *group_by* command
-- for each activity/subject combination, calculate the mean for each of the 66 observations using the *summarise_each* command
-- convert the 66 means per line into a list of 66 observation consisting of the activitym subject, feature and mean using the *gather* command
+- group the data by activity and subject using the *group_by* command,
+- for each activity/subject combination, calculate the mean for each of the 66 observations using the *summarise_each* command,
+- using the *gather* command, convert the 66 feature means per activity/subject observation into a list of 66 observations each consisting of the activity, subject, feature and mean,
 - sort the list by activity and then subject.
-This will give a tidy dataset consisting of 2,310 observations with 4 variables.
+This will give the required tidy dataset consisting of 2,310 observations with 4 variables.
 ```
 feature_means <-
   full_data %>%
@@ -109,9 +109,9 @@ feature_means <-
 ```
 
 ### Write out the data table
-Finally write out the table in the required format using the *write.table* command.
+Finally output the table in the required format using the *write.table* command.
 ```
 # Finally, write out the variable means
 write.table(feature_means,file="./UCI HAR Dataset/feature_means.txt",row.name=FALSE)
 ```
-Thsi file should be read into R using the *data.table* command.
+This file should be read into R using the *data.table* command.
