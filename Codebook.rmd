@@ -32,8 +32,6 @@ It is assumed that
 - [*run_analysis.R*](GetData_Assignment/run_analysis.R) has been copied from this repo to your working directory.  (Note: **do not** copy it to the *"UCI HAR Dataset"* subfolder underneath your working directory.)
 - the R packages *"dplyr"* and *"tidyr"* have already been installed.
 
-##Creating the tidy datafile
-
 ###Creating the tidy data file
 
 - execute the program *run_analysis.R* by typing *source("run-analysis.R")*
