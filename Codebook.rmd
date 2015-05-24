@@ -27,7 +27,7 @@ The experiments were carried out using a group of 30 volunteers within an age br
 
 ###Assumptions
 It is assumed that
-- the raw data has been downloaded from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip to avoid wasting bandwidth.
+- to avoid wasting bandwidth, the raw data has been downloaded from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip .
 - [*run_analysis.R*](https://github.com/wilsonae/GetData_Assignment/blob/master/run_analysis.R) has been copied from this repo to your working directory.
 - the R packages *"dplyr"* and *"tidyr"* have already been installed.
 
